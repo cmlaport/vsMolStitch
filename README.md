@@ -1,4 +1,4 @@
-*File description*
+#*File description*
 Written by Christine Mahajan 4/6/2026
 VSmolStitch is a Mathematica notebook designed to do 2 things:
 (1) Calculate the constraints and virtual site weights for virtual site coarse-grained force fields.
@@ -19,7 +19,7 @@ Outputs for molecule stitch
 
 
 
-*Required files and formatting*
+#*Required files and formatting*
 
 To run the notebook, you need two files. A .pdb and a .itp file.
 Import the monomer .itp and .pdb into Mathematica as a 'Table' with the built-in Import function in Mathematica.
@@ -58,7 +58,7 @@ the default functions used are 1 for bond and angle,
 
 
 
-*Getting constraints and virtual sites*
+#*Getting constraints and virtual sites*
 
 If you don't know the virtual sites and constraints, you can run the calculations for the weights on the fly for virtual sites .itp files section.
 We use virtual sites3 to define virtual sites on a plane.
@@ -73,7 +73,7 @@ computeVSConstraint[monomerPDB, vs atom#, real1, real2, real3]
 
 
 
-*stitching monomer functions*
+#*stitching monomer functions*
 
 Monomers are stitched together with 'addFirstMonomer' and 'addNextMonomer' functions.
 Calling these functions extracts the coordinates and monomer info and appends them to global variable lists for output.
@@ -112,7 +112,7 @@ You can see how I use this section in the notebook provided.
 
 
 
-*special functions*
+#*special functions*
 Extra potentials between monomers that are already placed can be added with 'addToPotential'.
 addToPotential[n1, {a1, b1, c1}, n2, {a2, b2, c2}]
 
@@ -143,14 +143,14 @@ r0 is a reference atom when writing out the new coordinates.
 
 
 
-*outputs*
+#*outputs*
 After stitching the pairs and exclusions are generated, the .gro and .itp files are written.
 The .itp file is written using writeITPLines['molecule'], and writeGroLines['molecule'] writes the .gro file.
 Here, 'molecule' is a string that represents the name of the molecule you have stitched together.
 
 
 
-*other things*
+#*other things*
 In vsMolStitch, the cells that must be changed by the user are highlighted in blue and custom cells are highlighted in cyan.
 
 You will need to supply a parameter file that contains the atom/particle type definitions, the non-bonded and bonded parameters.
