@@ -67,9 +67,12 @@ Virtual sites on stiff moieties need 3 real atoms that are constrained to make a
 Copy and paste the weights to your .itp file before running the stitch setup.  
 
 Calculate the distance between real atoms for constraints with:  
+
 computeDist[monomerPDB, real1, real2]  
 
+
 Calculate virtual site basis set weights with:  
+
 computeVSConstraint[monomerPDB, vs atom#, real1, real2, real3]  
 
 
@@ -80,13 +83,16 @@ Monomers are stitched together with 'addFirstMonomer' and 'addNextMonomer' funct
 Calling these functions extracts the coordinates and monomer info and appends them to global variable lists for output.  
 You will want to keep track of the monomers by the order you add them, which will become their residue number.  
 
-The first monomer is straightforward. Only the .pdb and .itp files previously imported are needed. Call them into the function as a list:  
+The first monomer is straightforward. Only the .pdb and .itp files previously imported are needed. Call them into the function as a list: 
+
 addFirstMonomer[ {monPDB, monITP} ]  
+
 
 'addNextMonomer' transforms the coordinates of a new monomer by rotating and translating the new monomer with respect to the coordinates from the existing monomers already added.  
 New bonds, angles and dihedrals are calculated between the two monomers.  
 To add new monomers, we need additional parameters specified to know where the new monomer will sit relative to monomers placed before it.  
 To add the next monomer to a chain, call:  
+
 addNextMonomer[{newpdb,newitp},{an,bn,cn},oldres,{ao,bo,co}, lbond, phi:(default 180)]  
 
 where  
@@ -115,7 +121,9 @@ You can see how I use this section in the notebook provided.
 
 # *special functions*
 Extra potentials between monomers that are already placed can be added with 'addToPotential'.  
+
 addToPotential[n1, {a1, b1, c1}, n2, {a2, b2, c2}]  
+
 
 'n1' and 'n2' are the residues we want to connect, and a, b and c are the atom indices previously described.  
 The function calculates bond, angles, dihedrals, and improper dihedrals, as well as the chemical bonds that are used for generating pairs and exclusions.  
@@ -127,21 +135,25 @@ I have added custom functions used to make the stiff backbone of Y6.
 These use the same inputs as 'addToPotential' and 'addNextMonomer',  
 but they differ in the dihedrals that are added.  
 First, stiff monomers in the fused ring core are added with just 1 dihedral.  
+
 addStiffMon[{newpdb,newitp},{an,bn,cn},oldres,{ao,bo,co}, lbond, phi]  
 
+
 Then additional bonds, angles and dihedrals were added with the second fused bond between BTD and TTP.  
+
 addSpecialBond[n1, {a1, b1, c1}, n2, {a2, b2, c2}]  
 
 Next the end groups were added, which were stiff enough to use harmonic potentials in place of any proper dihedrals.  
+
 'addNextMonomerH[{newpdb,newitp},{an,bn,cn},oldres,{ao,bo,co}, lbond, phi]'  
 
 You can rotate a molecule after placing monomers to a new direction with rotateMol  
+
 rotateMol[atom1, atom0, vector, r0 : -1]  
 
 atom1 and atom0 create a vector along the polymer.  
 The vector is the direction we wish to align to,  
 r0 is a reference atom when writing out the new coordinates.  
-
 
 
 # *outputs*
