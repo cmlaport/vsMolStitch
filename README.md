@@ -1,21 +1,22 @@
 # *File description*
-Written by Christine Mahajan 4/6/2026\ 
-VSmolStitch is a Mathematica notebook designed to do 2 things:\
-(1) Calculate the constraints and virtual site weights for virtual site coarse-grained force fields.\
-(2) Stitch together the different virtual site groups and other residues of a molecule or polymer for gromacs .gro and .itp files.\ 
-It will calculate bonded potentials, exclusions and pairs as monomers are added.\
+Written by Christine Mahajan 4/6/2026
 
-It requires a .m file that contains the functions needed for the notebook to work correctly: format.m.\
-Store format.m in the same directory as vsMolStitch.nb\
+VSmolStitch is a Mathematica notebook designed to do 2 things  
+(1) Calculate the constraints and virtual site weights for virtual site coarse-grained force fields.  
+(2) Stitch together the different virtual site groups and other residues of a molecule or polymer for gromacs .gro and .itp files.  
+It will calculate bonded potentials, exclusions and pairs as monomers are added.  
 
-The notebook is divided into the following sections:\
-Input files and parameters\
-Global variables declaration\
-Essential Functions\
-Custom potentials\
-Calculations for virtual sites for .itp files\
-Molecule stitch set up\
-Outputs for molecule stitch\
+It requires a .m file that contains the functions needed for the notebook to work correctly: format.m.  
+Store format.m in the same directory as vsMolStitch.nb  
+
+The notebook is divided into the following sections:  
+Input files and parameters  
+Global variables declaration  
+Essential Functions  
+Custom potentials  
+Calculations for virtual sites for .itp files  
+Molecule stitch set up  
+Outputs for molecule stitch  
 
 
 
