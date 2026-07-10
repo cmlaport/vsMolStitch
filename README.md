@@ -22,40 +22,40 @@ Outputs for molecule stitch
 
 # *Required files and formatting*
 
-To run the notebook, you need two files. A .pdb and a .itp file.
-Import the monomer .itp and .pdb into Mathematica as a 'Table' with the built-in Import function in Mathematica.
+To run the notebook, you need two files. A .pdb and a .itp file.  
+Import the monomer .itp and .pdb into Mathematica as a 'Table' with the built-in Import function in Mathematica.  
 
-The .pdb file format follows HETATM format and the coordinates should be formatted:
-"HETATM" serial# atomname residuename residue#(always 1) Xcoord Ycoord Zcoord element
-To calculate potentials you also need the chemical bond matrix lines (CONECT)
+The .pdb file format follows HETATM format and the coordinates should be formatted:  
+"HETATM" serial# atomname residuename residue#(always 1) Xcoord Ycoord Zcoord element  
+To calculate potentials you also need the chemical bond matrix lines (CONECT)  
 
-The .itp input file follows a certain order and is designed to skip lines leading with ';' . 
-The headings below are required in the .itp file. The atoms section must have atom definitions, but the other sections do not require definitions.
-You can copy the headings for your .itp file below:
+The .itp input file follows a certain order and is designed to skip lines leading with ';' .  
+The headings below are required in the .itp file. The atoms section must have atom definitions, but the other sections do not require definitions.  
+You can copy the headings for your .itp file below:  
 
-[ atoms ]
-;    serial number; atom type; residue number; residue name; atom name; charge group number; q(e); m(u)
+[ atoms ]  
+;    serial number; atom type; residue number; residue name; atom name; charge group number; q(e); m(u)  
 
-[ constraints ]
-; real1 real2 funct(1,bonded/2,nonbonded)    dist
+[ constraints ]  
+; real1 real2 funct(1,bonded/2,nonbonded)    dist  
 
-[ virtualsites3 ]
-;  vs real1 real2 real3  funct   a         b
-; ai  aj funct
+[ virtualsites3 ]  
+;  vs real1 real2 real3  funct   a         b  
+; ai  aj funct  
 
-[ bonds ]
-; ai  aj  ak funct
+[ bonds ]  
+; ai  aj  ak funct  
 
-[ angles ]
-; ai  aj  ak funct
+[ angles ]  
+; ai  aj  ak funct  
 
-[ dihedrals ]
-; ai  aj  ak  al funct
+[ dihedrals ]  
+; ai  aj  ak  al funct  
 
-The comment lines indicate the format needed to fill out the .itp file according to the gromacs reference manual.
-When the output file is written,
-the default functions used are 1 for bond and angle, 
-3 for proper dihedrals and 2 for improper dihedrals.
+The comment lines indicate the format needed to fill out the .itp file according to the gromacs reference manual.  
+When the output file is written,  
+the default functions used are 1 for bond and angle,  
+3 for proper dihedrals and 2 for improper dihedrals.  
 
 
 
