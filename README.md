@@ -1,5 +1,5 @@
 # *File description*
-Written by Christine Mahajan 4/6/2026\
+Written by Christine Mahajan 4/6/2026\ 
 VSmolStitch is a Mathematica notebook designed to do 2 things:\
 (1) Calculate the constraints and virtual site weights for virtual site coarse-grained force fields.\
 (2) Stitch together the different virtual site groups and other residues of a molecule or polymer for gromacs .gro and .itp files.\ 
