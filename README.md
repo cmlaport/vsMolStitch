@@ -6,6 +6,7 @@ VSmolStitch is a Mathematica notebook designed to do 2 things
 (2) Stitch together the different virtual site groups and other residues of a molecule or polymer for gromacs .gro and .itp files.  
 It will calculate bonded potentials, exclusions and pairs as monomers are added.  
 
+
 It requires a .m file that contains the functions needed for the notebook to work correctly: format.m.  
 Store format.m in the same directory as vsMolStitch.nb  
 
@@ -164,6 +165,13 @@ You will need to supply a parameter file that contains the atom/particle type de
 Virtual sites are a massless particle type, to conserve mass in virtual site groups, the mass must be distributed among the real atoms.  
 You can see in the example monomer .itp files how this is done.  
 
+
+
 I have supplied .itp files, .pdb files for monomers, as well as a parameter.itp file as an example taken from:  
 Mahajan, C. L.; Gomez, E. D.; Milner, S. T. Resolving the Atomistic Morphology of Domains and Interfaces in PM6:Y6 with Molecular Dynamics.   
 Macromolecules 2025, 58 (5), 2765-2778. https://doi.org/10.1021/acs.macromol.4c02588.  
+The Mathematica scripts were also developed for this paper, please cite this reference when using this package.
+
+
+The DOI for this software version:
+https://doi.org/10.5281/zenodo.21516548
